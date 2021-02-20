@@ -25,11 +25,14 @@ object AndroidFramework {
 }
 
 object KotlinVersions {
-    const val kotlinVersion = "1.4.21"
+    const val kotlinVersion = "1.4.30"
+    const val kotlinSerialization = "1.1.0"
 }
 
 object Kotlin {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${KotlinVersions.kotlinVersion}"
+    const val kotlinSerialization =
+        "org.jetbrains.kotlinx:kotlinx-serialization-json:${KotlinVersions.kotlinSerialization}"
 }
 
 object JetpackVersions {
@@ -45,8 +48,10 @@ object Jetpack {
     const val savedStateViewModel =
         "androidx.lifecycle:lifecycle-viewmodel-savedstate:${JetpackVersions.lifecycle}"
     const val navigation = "androidx.navigation:navigation-ui-ktx:${JetpackVersions.navigation}"
-    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${JetpackVersions.navigation}"
-    const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${JetpackVersions.navigation}"
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${JetpackVersions.navigation}"
+    const val navigationSafeArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${JetpackVersions.navigation}"
 
 }
 
@@ -72,6 +77,21 @@ object Koin {
     const val lifecycleKoin = "org.koin:koin-androidx-scope:${KoinVersions.koinVersion}"
     const val viewModelKoin = "org.koin:koin-androidx-viewmodel:${KoinVersions.koinVersion}"
 }
+
+object NetworkVersions {
+    const val retrofit2Version = "2.9.0"
+    const val kotlinSerializationAdapterVersion = "0.8.0"
+    const val okHttpVersion = "4.9.0"
+}
+
+object Network {
+    const val retrofit2 = "com.squareup.retrofit2:retrofit:${NetworkVersions.retrofit2Version}"
+    const val kotlinSerializationAdapter =
+        "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${NetworkVersions.kotlinSerializationAdapterVersion}"
+    const val okHttp = "com.squareup.okhttp3:okhttp:${NetworkVersions.okHttpVersion}"
+    const val httpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${NetworkVersions.okHttpVersion}"
+}
+
 
 object TestDependenciesVersion {
     const val junitVersion = "4.12"

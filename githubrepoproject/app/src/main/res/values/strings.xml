@@ -3,4 +3,6 @@
 
     <string name="main_error_state_title">Some error occurred :/</string>
     <string name="main_error_state_button">Try Again</string>
+
+    <string name="detail_toolbar_title">Repository Detail</string>
 </resources>

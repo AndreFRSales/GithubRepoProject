@@ -92,6 +92,14 @@ object Network {
     const val httpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${NetworkVersions.okHttpVersion}"
 }
 
+object ImageLoaderVersions {
+    const val coilVersion = "1.1.1"
+}
+
+object ImageLoader {
+    const val coil = "io.coil-kt:coil:${ImageLoaderVersions.coilVersion}"
+}
+
 
 object TestDependenciesVersion {
     const val junitVersion = "4.12"

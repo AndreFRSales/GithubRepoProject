@@ -80,6 +80,9 @@ dependencies {
 
     testImplementation TestDependencies.junit
     testImplementation TestDependencies.mockK
+    testImplementation Coroutines.coroutineTest
+    testImplementation TestDependencies.junitAndroid
+    testImplementation TestDependencies.archTest
 
     androidTestImplementation TestDependencies.junitAndroid
     androidTestImplementation TestDependencies.espresso

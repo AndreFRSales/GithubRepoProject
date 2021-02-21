@@ -76,6 +76,8 @@ dependencies {
     implementation Network.okHttp
     implementation Network.httpLoggingInterceptor
 
+    implementation ImageLoader.coil
+
     testImplementation TestDependencies.junit
     testImplementation TestDependencies.mockK
 

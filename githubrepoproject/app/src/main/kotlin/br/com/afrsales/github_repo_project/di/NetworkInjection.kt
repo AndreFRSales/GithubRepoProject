@@ -1,7 +1,7 @@
-package br.com.afrsales.github_repo_project
+package br.com.afrsales.github_repo_project.di
 
-import br.com.afrsales.github_repo_project.main.repository.RepositoriesApi
-import br.com.afrsales.github_repo_project.network.AppConfig.BASE_URL
+import br.com.afrsales.github_repo_project.features.main.repository.RepositoriesApi
+import br.com.afrsales.github_repo_project.common.AppConfig.BASE_URL
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">github-repo-project</string>
+
+    <string name="main_error_state_title">Some error occurred :/</string>
+    <string name="main_error_state_button">Try Again</string>
 </resources>

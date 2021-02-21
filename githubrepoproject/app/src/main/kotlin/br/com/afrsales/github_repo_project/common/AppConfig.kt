@@ -1,4 +1,4 @@
-package br.com.afrsales.github_repo_project.network
+package br.com.afrsales.github_repo_project.common
 
 object AppConfig {
 

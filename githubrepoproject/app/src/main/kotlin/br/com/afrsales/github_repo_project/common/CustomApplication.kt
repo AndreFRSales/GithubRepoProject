@@ -1,7 +1,9 @@
 package br.com.afrsales.github_repo_project.common
 
 import android.app.Application
-import br.com.afrsales.github_repo_project.networkModule
+import br.com.afrsales.github_repo_project.di.repositoriesModule
+import br.com.afrsales.github_repo_project.di.networkModule
+import br.com.afrsales.github_repo_project.features.main.di.mainInjection
 import org.koin.core.context.startKoin
 
 class CustomApplication : Application() {
@@ -13,7 +15,7 @@ class CustomApplication : Application() {
 
     private fun startKoinModules() {
         startKoin {
-            modules(networkModule)
+            modules(networkModule, repositoriesModule, mainInjection)
         }
     }
 

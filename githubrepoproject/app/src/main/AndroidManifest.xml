@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Githubrepoproject">
-        <activity android:name=".main.MainActivity">
+        <activity android:name="br.com.afrsales.github_repo_project.features.main.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

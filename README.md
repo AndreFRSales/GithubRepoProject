@@ -78,7 +78,7 @@ Utilizei MVVM no projeto na tela principal por alguns motivos:
 
 ## Gitflow
 
-Se quiser checar o fluxo do desenvolvimento, utilizei o Gitflow. A partir da criação desse documento a branch **develop** e **master** estão equalizadas. Para ver o grafo, pode executar o comando: *git log --oneline --decorate*.
+Se quiser checar o fluxo do desenvolvimento, utilizei o Gitflow. A partir da criação desse documento a branch **develop** e **main** estão equalizadas. Para ver o grafo, pode executar o comando: *git log --oneline --decorate*.
 
  ## Instalação
 

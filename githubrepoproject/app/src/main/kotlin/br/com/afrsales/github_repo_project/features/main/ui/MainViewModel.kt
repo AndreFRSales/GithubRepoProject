@@ -18,14 +18,11 @@ class MainViewModel(
         viewModelStateHandle.getLiveData<MainViewModelState>("mainState")
     val viewModelState: LiveData<MainViewModelState> get() = _viewModelState
 
-    private var searchText: String = ""
-
     init {
         if (_viewModelState.value == null) fetchRepos()
     }
 
     fun fetchRepos(value: String = "") {
-        searchText = value
         _viewModelState.value = MainViewModelState.Loading
         launch {
             val response = catching {
@@ -38,8 +35,8 @@ class MainViewModel(
         }
     }
 
-    fun retry() {
-        fetchRepos(searchText)
+    fun retry(text: String) {
+        fetchRepos(text)
     }
 
 }

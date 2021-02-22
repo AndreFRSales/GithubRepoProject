@@ -23,22 +23,35 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         setupSearchView()
+        setupRetry()
+    }
+
+    private fun setupRetry() {
+        binding.mainErrorState.errorButton.setOnClickListener {
+            val text = binding.mainSearchView.query.toString()
+            viewModel.retry(text)
+        }
     }
 
     private fun setupSearchView() {
-        binding.mainSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let {
-                    viewModel.fetchRepos(it)
+        binding.mainSearchView.apply {
+            setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    query?.let {
+                        viewModel.fetchRepos(it)
+                    }
+                    return true
                 }
-                return true
-            }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    return true
+                }
 
-        })
+            })
+
+            queryHint = getString(R.string.main_query_string)
+        }
+
     }
 
     private fun setupObservers() {
@@ -51,6 +64,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     }
                     is MainViewModelState.Data -> {
                         updateList(it.repositories)
+                        mainRecyclerView.visible()
                         binding.mainErrorState.root.gone()
                         binding.mainLoading.gone()
                     }

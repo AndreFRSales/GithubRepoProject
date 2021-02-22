@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlinx-serialization'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "br.com.afrsales.github_repo_project"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation Kotlin.kotlin
+    implementation Kotlin.kotlinSerialization
+
+    implementation AndroidFramework.kotlinCore
+
+    implementation MaterialDesign.constraintLayout
+    implementation MaterialDesign.appComponent
+    implementation MaterialDesign.materialDesign
+
+    implementation Coroutines.coroutineCore
+    implementation Coroutines.coroutineAndroid
+
+    implementation Koin.lifecycleKoin
+    implementation Koin.koin
+    implementation Koin.viewModelKoin
+
+    implementation Jetpack.liveData
+    implementation Jetpack.viewModel
+    implementation Jetpack.savedStateViewModel
+    implementation Jetpack.navigationFragment
+    implementation Jetpack.navigation
+    implementation Jetpack.common
+    implementation Jetpack.runtime
+
+    implementation Network.retrofit2
+    implementation Network.kotlinSerializationAdapter
+    implementation Network.okHttp
+    implementation Network.httpLoggingInterceptor
+
+    implementation ImageLoader.coil
+
+    testImplementation TestDependencies.junit
+    testImplementation TestDependencies.mockK
+    testImplementation Coroutines.coroutineTest
+    testImplementation TestDependencies.junitAndroid
+    testImplementation TestDependencies.archTest
+
+    androidTestImplementation TestDependencies.junitAndroid
+    androidTestImplementation TestDependencies.espresso
+
+}

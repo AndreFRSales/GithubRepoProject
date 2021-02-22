@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,8 +19,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/avatar"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/detail_image_size"
+        android:layout_height="@dimen/detail_image_size"
         android:layout_marginTop="@dimen/margin_large"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,29 +30,36 @@
         android:id="@+id/repoName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/RegularText"
         android:layout_marginTop="@dimen/margin_large"
+
         app:layout_constraintStart_toStartOf="@id/beginGuideline"
         app:layout_constraintEnd_toEndOf="@id/endGuideline"
-        app:layout_constraintTop_toBottomOf="@id/avatar" />
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        tools:text="Name"/>
 
     <TextView
         android:id="@+id/repoOwner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/RegularText"
         android:layout_marginTop="@dimen/margin_regular"
         app:layout_constraintStart_toStartOf="@id/beginGuideline"
         app:layout_constraintEnd_toEndOf="@id/endGuideline"
-        app:layout_constraintTop_toBottomOf="@id/repoName" />
+        app:layout_constraintTop_toBottomOf="@id/repoName"
+        tools:text="Owner"/>
 
     <TextView
         android:id="@+id/repoDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/RegularText"
         android:layout_marginTop="@dimen/margin_regular"
         android:maxLines="10"
         app:layout_constraintStart_toStartOf="@id/beginGuideline"
         app:layout_constraintEnd_toEndOf="@id/endGuideline"
-        app:layout_constraintTop_toBottomOf="@id/repoOwner" />
+        app:layout_constraintTop_toBottomOf="@id/repoOwner"
+        tools:text="Description"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/beginGuideline"
